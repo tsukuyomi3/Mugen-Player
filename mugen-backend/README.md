@@ -1,7 +1,7 @@
-#media
+# media
 
 This folder contains all the media(songs,images)
 
-#assets
+# assets
 
 Add all your js,css,dist from angular build in this folder
