@@ -1,0 +1,53 @@
+
+<div class="music-player">
+  <div class="music-player__now-playing">
+    <div class="music-player__song-info">
+      <div class="music-player__song-info-about">
+        <div class="music-player__song-info-name">
+          <a class="music-player__song-info-link music-player__song-info-link--song-name"
+            href="#">{{playingSong.song_title}}</a>
+        </div>
+        <div class="music-player__song-info-artist">
+          <a class="music-player__song-info-link music-player__song-info-link--artist-name"
+            href="#">{{selectedSongArtist}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="music-player__controls">
+    <div class="music-player__controls-buttons">
+      <div class = "shuffle-ctrl-btn">
+        <i class="fa fa-random"></i>
+      </div>
+      <div class="bwd-ctrl-btn">
+        <i (click)="playPreviousSong()" class="pi pi-step-backward-alt"></i>
+      </div>
+      <div class="play-pause">
+        <i [ngClass] = "isPlaying ? 'fa fa-pause-circle' : 'fa fa-play-circle' " (click) = playSong()></i>
+      </div>
+      <div class="fwd-ctrl-btn">
+        <i (click)="playNextSong()" class="pi pi-step-forward-alt"></i>
+      </div>
+      <div class = "repeat-ctrl-btn">
+          <i class="fa fa-repeat"></i>
+      </div>
+    </div>
+  </div>
+  <div class="music-player__playback-bar">
+      <div (click)="handChangeCurrentSongTime($event)" #progressBar class="music-player__playback-bar-progress-bar">
+        <div #progressBarStatus class="music-player__playback-bar-progress-bar-state"></div>
+      </div>
+      <div class="music-player__playback-bar-time-left">{{current_song_time}} / {{total_song_time}}</div>
+  </div>
+  <!-- <div class="music-player__playback-settings">
+    <button class="music-player__playback-settings-song-list-button control-button">Songs</button>
+    <button (click)="muteSong()" class="music-player__playback-settings-volume-button control-button">Volume</button>
+    <div #volumeBar (click)="handChangeVolume($event)" class="music-player__playback-settings-volume-progress-bar">
+      <div #volumeStatus class="music-player__playback-settings-volume-progress-bar-state"></div>
+    </div>
+  </div> -->
+</div>
+
+<audio #audio [src]="audio_src" ></audio>
+
+

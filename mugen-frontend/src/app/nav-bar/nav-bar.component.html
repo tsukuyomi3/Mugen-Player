@@ -1,0 +1,21 @@
+<body>
+  <header>
+    <div class="navbar" #myTopNav>
+      <a routerLink="/home/album" routerLinkActive="activeLink"
+        (click)="showAllAlbum()"><i class="fa fa-image" aria-hidden="true"></i>
+        Albums</a>
+      <a routerLink="/home/song" routerLinkActive="activeLink" 
+       (click)="showUserPlaylist()"><i class="fa fa-music" aria-hidden="true"></i> Songs</a>
+      <a routerLink="/home/artist" routerLinkActive="activeLink"><i class="fa fa-users" aria-hidden="true"></i> Artists</a>
+      <i *ngIf="!dataHandlerService.$detail_view" class="search-icon fa fa-search"
+        (click)="getComponent($event, query)"></i>
+      <input *ngIf="!dataHandlerService.$detail_view" type="search" class="search-bar"
+        (keyup.enter)="getComponent($event, query)" #query>
+      <a routerLink="/home/user" style="float: right;" routerLinkActive="activeLink"><i class="fa fa-user-circle-o"
+          aria-hidden="true"></i> {{activeUser}}</a>
+      <!-- <a class="icon" (click)="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a> -->
+    </div>
+  </header>
+</body>

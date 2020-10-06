@@ -1,0 +1,53 @@
+.album-div{
+    width: 15vw;
+    height: 40vh;
+    float: left;
+    margin: 4% 0.5% 2% 4%;
+}
+
+.logo-div{
+    width: 14vw;
+    height: 30vh;
+    margin: 0% 2% 0 6%;
+    border-radius: 2%;
+}
+
+.logo-div:hover{
+    cursor: pointer;
+}
+
+h3.album-name{
+    margin: 18% 0 0 6%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: whitesmoke;
+}
+
+h5.artist-name{
+    margin: 4% 0 0 6%;
+    color: whitesmoke;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+}
+
+.delete-button{
+    float: right;
+    font-size: 0.6em;
+    margin: 1% -4% -6% 0%;
+}
+
+.add-album-btn{
+    margin: 2% 0 0 90%;
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 4px;
+    outline: none !important;
+}
+
+.add-album-btn:hover{
+    cursor: pointer;
+}
+
+strong{
+    color: red;
+}
+

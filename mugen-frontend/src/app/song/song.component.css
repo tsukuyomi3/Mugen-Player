@@ -1,0 +1,56 @@
+.song-item{
+    width: 53%;
+    height: 115px;
+    border-radius: 6px;
+    margin: 4% 0 -2% 21%;
+    background-color: #efeaea;
+}
+.song-item:hover{
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0px 10px 8px rgb(197, 194, 194);
+}
+
+h3.song-title{
+    color: rgb(71, 71, 71);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 2px 0 0px 30px;
+}
+
+h5.artist-name{
+    color: rgb(71, 71, 71);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+    padding: 2px 0 0px 30px;
+    font-size: 14px;
+}
+
+.logo-div{
+    width: 8vw;
+    height: 17vh;
+    margin: -14.5% 0 0 84%;
+}
+
+.song-item:hover .logo-div{
+    margin: -14.1% 0 0 84.1%;
+}
+
+.song-item:hover h3.song-title{
+    padding: 0px 0 0 32px
+}
+
+.song-item:hover h5.artist-name{
+    padding: 0px 0 0 32px
+}
+
+.add-song-btn{
+    margin: 2% 0 0 90%;
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 4px;
+    outline: none !important;
+}
+
+.add-song-btn:hover{
+    cursor: pointer;
+}

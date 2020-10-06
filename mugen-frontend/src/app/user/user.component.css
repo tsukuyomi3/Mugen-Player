@@ -1,0 +1,24 @@
+.mainDiv{
+    width: 60%;
+    min-height: 80vh;
+    background: whitesmoke;
+    overflow: auto;
+    margin: 5% 0 0 20%;
+    border-radius: 4px;
+    padding: 2%;
+}
+
+.logout_btn{
+    float: right;
+    margin: 1.3% 0 0 0;
+}
+
+.friends-playlist-btn{
+    margin-left: 2%;
+}
+
+label > strong{
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    padding: 10px;
+}

@@ -1,0 +1,11 @@
+<div class="mainDiv">
+    <button pButton type="button" class="logout_btn ui-button-danger" label="Logout" (click)=logout()>
+    </button>
+    <label id="friendList"><strong>Friend's List : </strong></label>
+    <p-multiSelect class="select-friends" [options]="friendsList" [(ngModel)]="selectedFriends"
+    [style] = "{'width' : '20vw', 'top' : '1.5vh'}"
+        [displaySelectedLabel]="false">
+    </p-multiSelect>
+    <button pButton type="button" class="friends-playlist-btn ui-button-normal" label="Show Friends Playlist" (click)=showFriendsPlaylist()>
+    </button>
+</div>

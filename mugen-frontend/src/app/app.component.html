@@ -1,0 +1,4 @@
+<div *ngIf="dataHandlerService.msgs.length > 0">
+    <p-growl [(value)]="dataHandlerService.msgs" [life]='2000'></p-growl>
+</div>
+<router-outlet></router-outlet>

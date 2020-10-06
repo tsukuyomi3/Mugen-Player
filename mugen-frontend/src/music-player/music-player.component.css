@@ -1,0 +1,105 @@
+.music-player {
+    position: fixed;
+    bottom: 0;
+    width: 87%;
+    height: 80px;
+    background-color: #efebeb;
+    display: flex;
+    align-items: center;
+    margin: 0 0 0.8% 6%;
+    border-radius: 4px;
+    box-shadow: 0px 0px 8px #404040;
+}
+
+.music-player__playback-bar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 5% 22px 0 -74%;
+
+}
+
+.music-player__playback-bar-progress-bar{
+    position: relative;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color:#c1c1c1;
+}
+
+
+.music-player__playback-bar-progress-bar:hover{
+    cursor: pointer;
+}
+
+
+.music-player__controls{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    height: 60%;
+    margin-left: 11%;
+}
+.music-player__playback-bar-progress-bar-state{
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 4px;
+    border-radius: 2px;
+    max-width: 100%;
+    background-color: black;
+}
+
+.music-player__playback-bar-time-left{
+    letter-spacing: .015em;
+    width: 70px;
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    margin-left: 1%;
+}
+
+.fwd-ctrl-btn{
+    font-size: 2em;
+    margin: -109% 0 0 140%;
+    width: 100%;
+}
+
+.bwd-ctrl-btn{
+    font-size: 2em;
+    margin: -67% 0 0 -126%;
+    width: 100%;
+}
+
+.shuffle-ctrl-btn{
+    font-size: 1.2em;
+    margin: 16% 0 0 -215%;
+    width: 50%;
+}
+
+.play-pause{
+    font-size: 3.5em;
+    margin: -118% 0 0 0;
+}
+.repeat-ctrl-btn{
+    font-size: 1.2em;
+    margin: -72% 0 0 273%;
+    width: 50%;
+}
+
+.shuffle-ctrl-btn:hover{
+    cursor: pointer;
+}
+.fwd-ctrl-btn:hover{
+    cursor: pointer;
+}
+.bwd-ctrl-btn:hover{
+    cursor: pointer;
+}
+.play-pause:hover{
+    cursor: pointer;
+}
+.repeat-ctrl-btn:hover{
+    cursor: pointer;
+}

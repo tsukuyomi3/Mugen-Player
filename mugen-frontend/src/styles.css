@@ -1,0 +1,17 @@
+/* cross button on album */
+.album-div .ui-button-icon-only .ui-button-icon-left {
+    font-size: 25px;
+}
+
+/* select list in delete artist dialog box */
+.select-artists .ui-multiselect {
+    width: 22vw;
+}
+
+body{
+    outline: none !important;
+    /* width: 100%; */
+    overflow: hidden;
+    background-image: url('../src/media/theme1.jpg');
+    background-size: cover;
+}

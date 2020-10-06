@@ -1,0 +1,65 @@
+<div class="mainDiv" *ngIf="dataHandlerService.$isloginPage">
+    <div class="right-pane" *ngIf="isLoginForm">
+        <div class="logo">
+            <span class="normal_text">M</span> <span class="special_text">ü</span><span class="normal_text">gen</span>
+        </div>
+        <div class="divForm">
+            <form [formGroup]="loginform" (ngSubmit)="validateUser()" ngNativeValidate>
+                <div class="row1">
+                    <div class="col-70">
+                        <p *ngIf="loginError">*{{errorMsg}}</p>
+                        <input type="text" formControlName="username" required placeholder="Username">
+                    </div>
+                </div>
+                <div class="row2">
+                    <div class="col-70">
+                        <input type="password" formControlName="password" required placeholder="Password">
+                    </div>
+                </div>
+                <div class="row3">
+                    <button pButton type="submit" class="login_btn" label="Login">
+                    </button>
+                    <h3 (click)="showSignUpForm()">Sign-Up</h3>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="right-pane" *ngIf="isSignUpForm">
+        <div class="logo">
+            <span class="normal_text">M</span> <span class="special_text">ü</span><span class="normal_text">gen</span>
+        </div>
+        <div class="divForm">
+            <form [formGroup]="signUpform" (ngSubmit)="addUser()" ngNativeValidate>
+                <div class="row1">
+
+                    <div class="col-70">
+                        <p *ngIf="usernameExists">*{{errorMsg}}</p>
+                        <input type="text" formControlName="username" required placeholder="Username">
+                    </div>
+                </div>
+                <div class="row2">
+
+                    <div class="col-70">
+                        <p *ngIf="emailExists">*{{errorMsg}}</p>
+                        <input type="email" formControlName="email" required placeholder="Email">
+                    </div>
+                </div>
+                <div class="row4">
+                    <div class="col-70">
+                        <input type="password" formControlName="password" required placeholder="Password">
+                    </div>
+                </div>
+                <div class="row5">
+                    <button pButton type="submit" class="login_btn" label="Sign-Up">
+                    </button>
+                    <h3 (click)="showLoginForm()">Login</h3>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div *ngIf="!dataHandlerService.$isloginPage">
+    <app-nav-bar></app-nav-bar>
+</div>
+<router-outlet></router-outlet>

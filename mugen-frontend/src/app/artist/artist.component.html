@@ -1,0 +1,60 @@
+<div class="top-panel" *ngIf="!search_operation">
+        <button pButton type="button" class="delete-artist-btn ui-button-danger" icon="pi pi-trash"
+                (click)="showdeleteDialog()" label="Artist"></button>
+        <button pButton type="button" class="add-artist-btn" icon="pi pi-plus" (click)="add_artist=true"
+                label="Artist"></button>
+</div>
+
+
+<div *ngFor="let artist of artists">
+        <div class="artist-logo">
+                <a routerLink="/home/album" [queryParams]="{artist: [artist.artist_name], artist_id : [artist.id]}"
+                        routerLinkActive="activeLink" [routerLinkActiveOptions]="{exact: true}"
+                        (click)="dataHandlerService.$detail_view = false">
+                        <img src="../../media/{{artist.artist_logo}}" width="100%" height="100%"
+                                style="border-radius: 50%;">
+                </a>
+                <h3 class="artist-name"> {{artist.artist_name}} </h3>
+        </div>
+</div>
+
+
+<ng-template *ngIf="!is_artist_present">
+        <h3>No Artist !!!</h3>
+</ng-template>
+
+<!-- Add Artist -->
+<p-dialog class="add-album" header="Add Album" [(visible)]="add_artist" [width]="400"
+        (onHide)="add_artist=false" [modal]="true">
+        <form [formGroup]="form" (ngSubmit)="addArtist()" ngNativeValidate>
+                <div class="row">
+                        <div class="col-25">
+                                <label for="artist">Artist</label>
+                        </div>
+                        <div class="col-75">
+                                <input type="text" formControlName="artist" required>
+                        </div>
+                </div>
+                <div class="row">
+                        <div class="col-25">
+                                <label for="logo">Logo</label>
+                        </div>
+                        <div class="col-75">
+                                <input type="file" formControlName="artist_logo" (change)="onChange($event)">
+                        </div>
+                </div>
+                <button style="float: right;">Add</button>
+        </form>
+</p-dialog>
+
+<!-- Delete Artist -->
+<p-dialog header="Delete Artist" [(visible)]="delete_artist" [contentStyle]="{'max-height':'35vh', 'overflow' : 'auto'}" [modal]="true">
+        <p-multiSelect class="select-artists" [options]="artistList" [(ngModel)]="selectedArtistsID"
+                [displaySelectedLabel]="false">
+        </p-multiSelect>
+        <button pButton type="button" class="delete-btn ui-button-danger" icon="pi pi-trash" label="Delete"
+                (click)="deleteArtist()"></button>
+        <!-- <div class="delete-artist">
+                
+        </div> -->
+</p-dialog>

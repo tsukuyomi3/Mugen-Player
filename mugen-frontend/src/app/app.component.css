@@ -1,0 +1,99 @@
+.left-pane{
+    width: 65%;
+    height: 98vh;
+    display: inline-block;
+    /* background-image: url("../media/login.jpg"); */
+}
+
+.right-pane{
+    width: 35%;
+    height: 98vh;
+    float: right;
+}
+
+.col-70{
+    width: 80%;
+    margin: 30% 0 0 10%;
+}
+
+input {
+    width: 100%;
+    padding: 5% 8%;
+    border-radius: 35px;
+    border: none !important;
+    outline: none !important;
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+.row2{
+    margin: -18% 0 0 0;
+}
+
+.row3{
+    margin: 10% 0 0 40%;
+}
+
+.row4{
+    margin: -18% 0 0 0;
+}
+
+.row5{
+    margin: 10% 0 0 40%;
+}
+
+.login_btn{
+    padding: 2% 3%;
+    border-radius: 25px;
+    font-size: medium;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    outline: none !important;
+}
+
+.login_btn:hover{
+    font-weight: bold;
+    background : blueviolet;
+}
+
+h3{
+    float: right;
+    margin-right: 30%;
+    color: #d8dae2;
+}
+
+h3:hover{
+    cursor: pointer;
+    font-size: larger;
+}
+
+p{
+    color: red;
+}
+span{
+    font-size: 72px;
+    background: -webkit-linear-gradient(#0851f5, #de0b51);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.divForm{
+    margin-top: -25%;
+}
+
+.logo{
+    margin: 0 0 0 20%;
+}
+
+.normal_text{
+    color: #ffaa00;
+    font-size: 90px;
+    font-family: cursive;
+}
+
+.special_text{
+    color: #ffaa00;
+    font-size: 90px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}

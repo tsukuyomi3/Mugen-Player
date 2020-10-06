@@ -1,0 +1,78 @@
+<div class="mainDiv"  *ngIf="!dataHandlerService.$detail_view">
+    <div class="top-panel" *ngIf="!search_operation">
+        <button pButton type="button" class="add-album-btn" icon="pi pi-plus" (click)=showAddAlbumDialog()
+            label="Album"></button>
+    </div>
+
+    <div class="body-panel">
+        <div *ngFor="let album of albums" class="album-div" >
+            <button pButton type="button" icon="pi pi-times-circle" (click)="showDeleteDialog(album)"
+                class=" delete-button ui-button-rounded ui-button-danger">
+            </button>
+
+            <div class="logo-div" (click)="detailView(album)">
+                <img width="100%" height="100%" style="border-radius: 7%;"
+                    src="../../media/{{album?.album_logo}}">
+            </div>
+
+            <!-- <button pButton type="button" icon = "pi pi-pencil" class = "icons"></button> -->
+            <h3 class="album-name"> {{album?.album_title}} </h3>
+            <h5 class="artist-name">{{getArtist(album?.artist_id)}}</h5>
+        </div>
+    </div>
+
+    <ng-template *ngIf="!is_album_present">
+        <h3>No Album !!!</h3>
+    </ng-template>
+
+    <!-- Delete Album -->
+    <p-dialog class="delete-album" header="Delete Album" [(visible)]="delete_album" [modal]="true">
+        <label class="delete-msg">Delete <strong>{{this.dataHandlerService.$selected_album }}</strong> Album ?</label>
+        <button class="delete-yes" (click)="deleteAlbum()">Yes</button>
+        <button class="delete-no" (click)="closeDeleteDialog()">No</button>
+    </p-dialog>
+
+    <!-- Add Album -->
+    <p-dialog class="add-album" header="Add Album" [(visible)]="add_album" [width]="400" [modal]="true">
+        <form [formGroup]="form" (ngSubmit)="addAlbum()" ngNativeValidate>
+            <div class="row">
+                <div class="col-25">
+                    <label for="artist">Artist</label>
+                </div>
+                <div class="col-75">
+                    <p-dropdown [options]="artistList" formControlName="artist" [style]="{'width': '100%'}" required>
+                    </p-dropdown>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="album">Album</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" formControlName="album" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="genre">Genre</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" formControlName="genre" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="logo">Logo</label>
+                </div>
+                <div class="col-75">
+                    <input type="file" formControlName="album_logo" (change)="onChange($event)">
+                </div>
+            </div>
+            <button style="float: right;">Add</button>
+        </form>
+    </p-dialog>
+</div>
+
+<div *ngIf="dataHandlerService.$detail_view">
+    <app-album-details [albumObj]="albumObj"></app-album-details>
+</div>

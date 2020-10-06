@@ -1,0 +1,69 @@
+<div class="left-panel">
+    <div class="logo-div">
+        <img width="100%" height="100%" src="../../../media/{{selected_album.album_logo}}" alt="default.png">
+    </div>
+
+    <!-- <button pButton type="button" icon = "pi pi-pencil" class = "icons"></button> -->
+    <h2 class="album-name"> {{selected_album.album_title}} </h2>
+    <h4 class="artist-name">{{getArtist(selected_album.artist_id)}}</h4>
+    <h4 class="album-genre"> {{selected_album.genre}} </h4>
+</div>
+
+<div class="right-panel">
+    <div class="top-panel">
+        <button pButton type="button" class="add-song-btn" icon="pi pi-plus" (click)=songDialog() label="Song"></button>
+    </div>
+    <hr>
+    <div class="songs-div">
+        <ul>
+            <div *ngFor = "let song of songs" (click) = "show(song)" class="song-item">
+                <li> 
+                {{song.song_title}}
+                </li>
+            </div>
+        </ul>
+    </div>
+</div>
+
+<!-- Add Song Dialog box -->
+<p-dialog class="add-song" header="Add Song" [(visible)]="add_song" [width]="400" [modal] = "true">
+    <form [formGroup]="form" (ngSubmit)="addSong()" ngNativeValidate>
+        <div class="row">
+            <div class="col-25">
+                <label for="artist">Album</label>
+            </div>
+            <div class="col-75">
+                <input type="text" formControlName="album" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="artist">Artist</label>
+            </div>
+            <div class="col-75">
+                <input type="text" formControlName="artist" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="album">Song</label>
+            </div>
+            <div class="col-75">
+                <input type="text" formControlName="song_title" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="genre">Audio</label>
+            </div>
+            <div class="col-75">
+                <input type="file" formControlName="audio" required accept="audio/*" (change)="onChange($event)" >
+            </div>
+        </div>
+        <button class="add-btn" style="float: right;">Add</button>
+    </form>
+</p-dialog>
+
+<div *ngIf="isSongSelected">
+    <app-music-player [toggle]="toggle"></app-music-player>
+</div>
