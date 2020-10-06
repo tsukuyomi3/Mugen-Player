@@ -1,0 +1,53 @@
+[
+    {
+        "user": "kripa",
+        "friends": [
+            "Test"
+        ],
+        "album_id": [
+            40,
+            41,
+            42
+        ],
+        "song_id": [
+            3,
+            4
+        ],
+        "artist_id": [
+            4,
+            5,
+            6,
+            7
+        ]
+    },
+    {
+        "user": "Test",
+        "friends": [
+            "kripa",
+            "dumbo"
+        ],
+        "album_id": [
+            43,
+            44,
+            156
+        ],
+        "song_id": [
+            5,
+            6
+        ],
+        "artist_id": [
+            6,
+            7,
+            45
+        ]
+    },
+    {
+        "user": "dumbo",
+        "friends": [
+            "Test"
+        ],
+        "album_id": [],
+        "song_id": [],
+        "artist_id": []
+    }
+]
