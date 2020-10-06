@@ -1,1 +1,0 @@
-/** this text file contains mugen player backend structure**/
